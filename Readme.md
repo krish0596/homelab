@@ -13,3 +13,5 @@ additional k8 resources like CNI plugins and all
 multi stage dockerfile build possible right now it assumes we have a pre built in build//libs
 
 this shall grow with time
+
+maybe also include ansible playbooks for future ????
