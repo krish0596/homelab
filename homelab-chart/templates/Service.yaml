@@ -4,9 +4,9 @@ metadata:
   name: homelab-service
 spec:
   selector:
-    app: homelab  # Make sure this matches your pod label
+    app: homelab  #pod label
   type: NodePort
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 30080  # External port on your machine
+      nodePort: 30080  # External port on machine
