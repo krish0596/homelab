@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homelab-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homelab
+  template:
+    metadata:
+      labels:
+        app: homelab
+    spec:
+      containers:
+        - name: homelabkrish
+          image: ghcr.io/krish0596/homelab-krish:slim
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: ghcr-secret

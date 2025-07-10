@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log a Message</title>
+</head>
+<body>
+<h1>Send Message to Server</h1>
+<input type="text" id="messageInput" placeholder="Type a message..." />
+<button onclick="sendMessage()">Send</button>
+
+<script>
+    function sendMessage() {
+        const content = document.getElementById("messageInput").value;
+        fetch("/api/log", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ content })
+        }).then(() => {
+            alert("Message sent!");
+            document.getElementById("messageInput").value = "";
+        });
+    }
+</script>
+</body>
+</html>
