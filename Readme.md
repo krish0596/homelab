@@ -15,3 +15,13 @@ multi stage dockerfile build possible right now it assumes we have a pre built i
 this shall grow with time
 
 maybe also include ansible playbooks for future ????
+
+
+USE:
+Prerequisite: minikube , kubectl
+build the java application using gradlew build
+build the image using docker and push it into any container registry, create its secret using  
+kubcetl apply -f and install the homelab helm chart. to test the service we can exec into any of the pods  
+and curl the service  
+to test we need to use minikube tunnel since minikube runs inside the vm and then we can use the   
+curl with resolve cmd to test. and then inspect the logs of the homlab application pod
